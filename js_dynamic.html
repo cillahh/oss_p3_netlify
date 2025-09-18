@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            const add = document.getElementById('addBtn');
+            const remove = document.getElementById('delBtn');
+            const list = document.getElementById('wordList');
+
+            add.addEventListener('click', () => addWord(list));
+            remove.addEventListener('click', () => removeWord(list));
+
+        };
+        function addWord(list) {
+            const words = document.getElementById('words');
+            if (words.value != "") {
+                const wordList = words.value.split(',');
+                wordList.forEach(element => {
+                    const newLi = document.createElement('li');
+                    newLi.innerText = element;
+                    list.appendChild(newLi);
+                });
+                words.value = "";
+            }
+        }
+        function removeWord(list) {
+            list.innerHTML = "";
+        }
+    </script>
+    <style>
+        #addBtn {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 3px 10px;
+        }
+
+        #delBtn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 3px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic Web page</h1>
+    <div>
+        <input type="text" id="words">
+        <button id="addBtn">추가</button>
+        <button id="delBtn">삭제</button>
+    </div>
+    <div>
+        <ul id="wordList">
+
+        </ul>
+    </div>
+</body>
+
+</html>
