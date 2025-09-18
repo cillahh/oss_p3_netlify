@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>영화 관리</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .btn-custom {
+            margin: 0px 10px;
+            padding: auto;
+        }
+
+        .card-hover-actions {
+            display: none;
+            /* 기본 숨김 */
+            flex-direction: row;
+            /* 버튼 가로 배열 */
+        }
+
+        .card:hover .card-hover-actions {
+            display: flex;
+            /* hover 시 표시 */
+        }
+        #add {
+            margin-left: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-5">
+        <h1 class="mb-4 text-center">CGV 차트</h1>
+        <div class="d-flex fustify-content-end">
+            <a href="add.html" id="add" class="btn btn-sm btn-dark"><i class="bi bi-plus"></i>영화 등록</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+
+            <!-- 영화 카드 1 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <a href="view.html"><img
+                            src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20250917_64%2F1758077108859meQA6_JPEG%2Fmovie_image.jpg"
+                            class="card-img-top" alt="영화 포스터"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">모노노케 히메</h5>
+                        <p class="card-text"><strong>개봉일:</strong> 2025-09-17 재개봉</p>
+                        <p class="card-text"><strong>평점:</strong> ⭐ 9.1</p>
+                        <p class="card-text"><strong>누적관객수:</strong> 6.8만</p>
+                        <p class="card-text"><strong>러닝타임:</strong> 133분</p>
+                        <span class="badge bg-primary">애니메이션</span>
+                    </div>
+                    <div class="card-hover-actions position-absolute top-0 end-0 m-2">
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()"><i
+                                class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 영화 카드 2 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <a href="view.html"><img
+                            src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20250605_102%2F1749114555681W3FeM_JPEG%2Fmovie_image.jpg"
+                            class="card-img-top" alt="영화 포스터"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">F1 더 무비</h5>
+                        <p class="card-text"><strong>개봉일:</strong> 2025-06-25</p>
+                        <p class="card-text"><strong>평점:</strong> ⭐ 9.5</p>
+                        <p class="card-text"><strong>누적관객수:</strong> 506.3만</p>
+                        <p class="card-text"><strong>러닝타임:</strong> 155분</p>
+                        <span class="badge bg-success">드라마</span>
+                    </div>
+                    <div class="card-hover-actions position-absolute top-0 end-0 m-2">
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1">Edit</a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 영화 카드 3 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <a href="view.html"><img
+                            src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20250819_216%2F17555951470607VuW5_JPEG%2Fmovie_image.jpg"
+                            class="card-img-top" alt="영화 포스터"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">얼굴</h5>
+                        <p class="card-text"><strong>개봉일:</strong> 2025-09-11</p>
+                        <p class="card-text"><strong>평점:</strong> ⭐ 8.1</p>
+                        <p class="card-text"><strong>누적관객수:</strong> 43만</p>
+                        <p class="card-text"><strong>러닝타임:</strong> 103분</p>
+                        <span class="badge bg-warning text-dark">미스터리</span>
+                    </div>
+                    <div class="card-hover-actions position-absolute top-0 end-0 m-2">
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1">Edit</a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 영화 카드 4 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm position-relative">
+                    <a href="view.html"><img
+                            src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20250905_249%2F17570390505461Flp0_JPEG%2Fmovie_image.jpg"
+                            class="card-img-top" alt="영화 포스터"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">살인자 리포트</h5>
+                        <p class="card-text"><strong>개봉일:</strong> 2025-09-05</p>
+                        <p class="card-text"><strong>평점:</strong> ⭐ 8.0</p>
+                        <p class="card-text"><strong>누적관객수:</strong> 31만</p>
+                        <p class="card-text"><strong>러닝타임:</strong> 107분</p>
+                        <span class="badge bg-success">드라마</span>
+                    </div>
+                    <div class="card-hover-actions position-absolute top-0 end-0 m-2">
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1">Edit</a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()">Delete</button>
+                    </div>
+                    <!-- <div class="card-footer d-flex justify-content-md-between justify-content-end align-items-center">
+                        <a href="edit.html" class="btn btn-warning btn-sm btn-custom">Edit</a>
+                        <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Delete</button>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
