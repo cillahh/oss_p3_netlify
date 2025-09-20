@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pop {
+            background-color:antiquewhite;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pop"></div>
+    
+</body>
+</html>
+<script>
+    const div = document.getElementById('pop');
+    var colorArr = ['blueviolet','brown','blue','yellow','grey','green','red','aqua','darkorange'];
+    var index = 0;
+    document.body.addEventListener('mousemove',()=>{
+        index = (index+1)%9 ;
+        div.style.backgroundColor = colorArr[index];
+    })
+
+</script>

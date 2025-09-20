@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const myDiv = document.createElement('div');
+            myDiv.innerText = 'Click Me!';
+            myDiv.style.width = '200px';
+            myDiv.style.height = '100px';
+            myDiv.style.backgroundColor = 'antiquewhite';
+            document.body.appendChild(myDiv);
+            myDiv.addEventListener('click',function(){
+                myDiv.innerText = 'Hello World!';
+            })
+        };
+    </script> 
+</head>
+<body>
+    <h1>My First Page</h1>
+    <!-- <div id="myDiv">Click Me!</div> -->
+</body>
+</html>
