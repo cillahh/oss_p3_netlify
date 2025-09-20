@@ -4,9 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>영화 관리</title>
+    <title>CGV 차트</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function confirmDelete() {
+            if (confirm("게시물을 삭제할까요?")) {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
     <style>
         .btn-custom {
             margin: 0px 10px;
@@ -24,23 +32,56 @@
             display: flex;
             /* hover 시 표시 */
         }
+
         #add {
             margin-left: auto;
             margin-bottom: 10px;
+        }
+        #inner  {
+            height: 80px;
+            background-color: black;
+        }
+        .innerImg {
+            object-fit:contain;
+            height: 80px;
+            width: 100%;
         }
     </style>
 </head>
 
 <body class="bg-light">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="inner">
+                <div class="carousel-item active">
+                    <img src="https://cf2.lottecinema.co.kr/lotte_image/2025/TheGodfather/TheGodfather_98080.jpg" class="innerImg d-block h-30">
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="https://cf2.lottecinema.co.kr/lotte_image/2025/BrideoftheCovenant/BrideoftheCovenant_9801802.jpg" class="innerImg d-block h-30">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.cgv.co.kr/cgvpomscontent/ips/evnt/2025/0919/391790f9f5fc4b17b447485fda6f30e9.jpg" class="innerImg d-block h-30">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
 
     <div class="container py-5">
-        <h1 class="mb-4 text-center">CGV 차트</h1>
+        
+        <h1 class="mb-4 text-center">영화 차트</h1>
         <div class="d-flex fustify-content-end">
             <a href="add.html" id="add" class="btn btn-sm btn-dark"><i class="bi bi-plus"></i>영화 등록</a>
         </div>
 
         <div class="row row-cols-1 row-cols-md-4 g-4">
-
             <!-- 영화 카드 1 -->
             <div class="col">
                 <div class="card h-100 shadow-sm">
@@ -78,15 +119,16 @@
                         <span class="badge bg-success">드라마</span>
                     </div>
                     <div class="card-hover-actions position-absolute top-0 end-0 m-2">
-                        <a href="edit.html" class="btn btn-sm btn-warning me-1">Edit</a>
-                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()">Delete</button>
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()"><i
+                                class="bi bi-trash"></i></button>
                     </div>
                 </div>
             </div>
 
             <!-- 영화 카드 3 -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
+                <div class="card h-100 shadow-sm ">
                     <a href="view.html"><img
                             src="https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20250819_216%2F17555951470607VuW5_JPEG%2Fmovie_image.jpg"
                             class="card-img-top" alt="영화 포스터"></a>
@@ -99,8 +141,9 @@
                         <span class="badge bg-warning text-dark">미스터리</span>
                     </div>
                     <div class="card-hover-actions position-absolute top-0 end-0 m-2">
-                        <a href="edit.html" class="btn btn-sm btn-warning me-1">Edit</a>
-                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()">Delete</button>
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()"><i
+                                class="bi bi-trash"></i></button>
                     </div>
                 </div>
             </div>
@@ -120,20 +163,17 @@
                         <span class="badge bg-success">드라마</span>
                     </div>
                     <div class="card-hover-actions position-absolute top-0 end-0 m-2">
-                        <a href="edit.html" class="btn btn-sm btn-warning me-1">Edit</a>
-                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()">Delete</button>
+                        <a href="edit.html" class="btn btn-sm btn-warning me-1"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDelete()"><i
+                                class="bi bi-trash"></i></button>
                     </div>
-                    <!-- <div class="card-footer d-flex justify-content-md-between justify-content-end align-items-center">
-                        <a href="edit.html" class="btn btn-warning btn-sm btn-custom">Edit</a>
-                        <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Delete</button>
-                    </div> -->
                 </div>
             </div>
-
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+    </div>
 </body>
 
 </html>
